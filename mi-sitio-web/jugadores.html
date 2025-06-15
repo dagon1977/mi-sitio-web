@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutbolNet - Jugadores</title>
+    <meta name="description" content="Perfiles de los jugadores de fútbol más destacados, sus estadísticas y trayectoria.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jugadores.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="global-header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Logo FutbolNet" class="logo-img">
+                    <span class="site-title">FutbolNet</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="noticias.html">Noticias</a></li>
+                    <li><a href="partidos.html">Partidos</a></li>
+                    <li><a href="equipos.html">Equipos</a></li>
+                    <li><a href="jugadores.html" class="active">Jugadores</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-button" aria-label="Abrir menú" aria-expanded="false">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <main class="main-jugadores">
+        <div class="container">
+            <section class="players-section">
+                <header class="section-header">
+                    <h1>Conoce a los Jugadores</h1>
+                    <p>Explora los perfiles de los talentos del fútbol mundial y sus estadísticas.</p>
+                </header>
+
+                <div class="player-filters">
+                    <input type="search" id="player-search" name="search" placeholder="Buscar jugador por nombre...">
+                    <select id="team-filter-players" name="team">
+                        <option value="all">Todos los Equipos</option>
+                        <option value="real-portada">Real Portada</option>
+                        <option value="atletico-central">Atlético Central</option>
+                        <option value="deportivo-oriental">Deportivo Oriental</option>
+                        </select>
+                    <select id="position-filter-players" name="position">
+                        <option value="all">Todas las Posiciones</option>
+                        <option value="delantero">Delantero</option>
+                        <option value="mediocampista">Mediocampista</option>
+                        <option value="defensa">Defensa</option>
+                        <option value="portero">Portero</option>
+                    </select>
+                    <button class="filter-button">Buscar Jugadores</button>
+                </div>
+
+                <div class="players-grid">
+                    <article class="player-card">
+                        <a href="jugador-detalle.html?id=alexis-sanchez" class="player-card-link">
+                            <div class="player-image-container">
+                                <img src="images/player_placeholder.png" alt="Foto Alexis Sánchez" class="player-photo">
+                            </div>
+                            <div class="player-info">
+                                <h3 class="player-name">Alexis Sánchez</h3>
+                                <p class="player-team">Real Portada</p>
+                                <p class="player-position">Delantero</p>
+                                <p class="player-nationality">
+                                    <img src="images/flag_cl.png" alt="Bandera Chile" class="flag-icon"> Chile
+                                </p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="player-card">
+                        <a href="jugador-detalle.html?id=kevin-de-bruyne" class="player-card-link">
+                             <div class="player-image-container">
+                                <img src="images/player_placeholder.png" alt="Foto Kevin De Bruyne" class="player-photo">
+                            </div>
+                            <div class="player-info">
+                                <h3 class="player-name">Kevin De Bruyne</h3>
+                                <p class="player-team">Atlético Central</p>
+                                <p class="player-position">Mediocampista</p>
+                                <p class="player-nationality">
+                                    <img src="images/flag_be.png" alt="Bandera Bélgica" class="flag-icon"> Bélgica
+                                </p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="player-card">
+                        <a href="jugador-detalle.html?id=virgil-van-dijk" class="player-card-link">
+                            <div class="player-image-container">
+                                <img src="images/player_placeholder.png" alt="Foto Virgil van Dijk" class="player-photo">
+                            </div>
+                            <div class="player-info">
+                                <h3 class="player-name">Virgil van Dijk</h3>
+                                <p class="player-team">Deportivo Oriental</p>
+                                <p class="player-position">Defensa</p>
+                                <p class="player-nationality">
+                                    <img src="images/flag_nl.png" alt="Bandera Países Bajos" class="flag-icon"> Países Bajos
+                                </p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="player-card">
+                        <a href="jugador-detalle.html?id=alisson-becker" class="player-card-link">
+                            <div class="player-image-container">
+                                <img src="images/player_placeholder.png" alt="Foto Alisson Becker" class="player-photo">
+                            </div>
+                            <div class="player-info">
+                                <h3 class="player-name">Alisson Becker</h3>
+                                <p class="player-team">Unión del Sur</p>
+                                <p class="player-position">Portero</p>
+                                <p class="player-nationality">
+                                    <img src="images/flag_br.png" alt="Bandera Brasil" class="flag-icon"> Brasil
+                                </p>
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="player-card">
+                        <a href="jugador-detalle.html?id=erling-haaland" class="player-card-link">
+                            <div class="player-image-container">
+                                <img src="images/player_placeholder.png" alt="Foto Erling Haaland" class="player-photo">
+                            </div>
+                            <div class="player-info">
+                                <h3 class="player-name">Erling Haaland</h3>
+                                <p class="player-team">Atlético Central</p>
+                                <p class="player-position">Delantero</p>
+                                <p class="player-nationality">
+                                    <img src="images/flag_no.png" alt="Bandera Noruega" class="flag-icon"> Noruega
+                                </p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="player-card">
+                        <a href="jugador-detalle.html?id=lionel-messi" class="player-card-link">
+                            <div class="player-image-container">
+                                <img src="images/player_placeholder.png" alt="Foto Lionel Messi" class="player-photo">
+                            </div>
+                            <div class="player-info">
+                                <h3 class="player-name">Lionel Messi</h3>
+                                <p class="player-team">FC Innovación</p>
+                                <p class="player-position">Delantero</p>
+                                <p class="player-nationality">
+                                    <img src="images/flag_ar.png" alt="Bandera Argentina" class="flag-icon"> Argentina
+                                </p>
+                            </div>
+                        </a>
+                    </article>
+                    </div>
+                 <p class="no-players-found" style="display:none;">No se encontraron jugadores con los criterios seleccionados.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="global-footer">
+        <div class="container footer-content">
+            <div class="footer-section contact-info">
+                <h4>Contacto</h4>
+                <p>Email: info@futbolnet.com</p>
+                <p>Teléfono: +123 456 7890</p>
+                <p>Dirección: Calle Falsa 123, Ciudad Fútbol</p>
+            </div>
+            <div class="footer-section social-media">
+                <h4>Síguenos</h4>
+                <a href="#" aria-label="Facebook">FB</a>
+                <a href="#" aria-label="Twitter">TW</a>
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="YouTube">YT</a>
+            </div>
+            <div class="footer-section corporate-info">
+                <h4>FutbolNet</h4>
+                <p>&copy; 2025 FutbolNet. Todos los derechos reservados.</p>
+                <p><a href="#">Política de Privacidad</a> | <a href="#">Términos de Uso</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Desarrollado con pasión por el fútbol.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

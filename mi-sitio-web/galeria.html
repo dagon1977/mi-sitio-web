@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutbolNet - Galería Multimedia</title>
+    <meta name="description" content="Las mejores imágenes y videos de fútbol: partidos, jugadores, celebraciones y más.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/galeria.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="global-header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Logo FutbolNet" class="logo-img">
+                    <span class="site-title">FutbolNet</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="noticias.html">Noticias</a></li>
+                    <li><a href="partidos.html">Partidos</a></li>
+                    <li><a href="equipos.html">Equipos</a></li>
+                    <li><a href="jugadores.html">Jugadores</a></li>
+                    <li><a href="galeria.html" class="active">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-button" aria-label="Abrir menú" aria-expanded="false">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <main class="main-galeria">
+        <div class="container">
+            <section class="gallery-section">
+                <header class="section-header">
+                    <h1>Galería Multimedia</h1>
+                    <p>Revive los mejores momentos del fútbol a través de nuestras imágenes y videos.</p>
+                </header>
+
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Todo</button>
+                    <button class="filter-btn" data-filter="partidos">Partidos</button>
+                    <button class="filter-btn" data-filter="jugadores">Jugadores</button>
+                    <button class="filter-btn" data-filter="celebraciones">Celebraciones</button>
+                    <button class="filter-btn" data-filter="videos">Videos</button>
+                </div>
+
+                <div class="gallery-grid">
+                    <article class="gallery-item" data-category="partidos">
+                        <a href="images/gallery_large_1.jpg" target="_blank" class="gallery-link">
+                            <img src="images/gallery_thumb_1.jpg" alt="Emocionante jugada en un partido" class="gallery-thumbnail">
+                            <div class="gallery-overlay">
+                                <span class="icon-view">&#128269;</span> <p class="gallery-caption">Clásico bajo la lluvia</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="gallery-item" data-category="jugadores">
+                        <a href="images/gallery_large_2.jpg" target="_blank" class="gallery-link">
+                            <img src="images/gallery_thumb_2.jpg" alt="Retrato de un jugador estrella" class="gallery-thumbnail">
+                             <div class="gallery-overlay">
+                                <span class="icon-view">&#128269;</span>
+                                <p class="gallery-caption">Figura del mediocampo</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="gallery-item video-item" data-category="videos">
+                        <div class="video-thumbnail-container">
+                            <img src="images/video_thumb_1.jpg" alt="Miniatura de video de goles" class="gallery-thumbnail video-thumb">
+                            <div class="gallery-overlay video-overlay">
+                                <span class="icon-play">&#9658;</span> <p class="gallery-caption">Mejores Goles de la Semana</p>
+                            </div>
+                        </div>
+                        <div class="video-player-container" style="display: none;">
+                            <video controls width="100%" poster="images/video_thumb_1.jpg">
+                                <source src="videos/sample_video.mp4" type="video/mp4">
+                                Tu navegador no soporta la etiqueta de video.
+                            </video>
+                            <button class="close-video-btn" aria-label="Cerrar video">&times;</button>
+                        </div>
+                    </article>
+
+                    <article class="gallery-item" data-category="celebraciones">
+                        <a href="images/gallery_large_3.jpg" target="_blank" class="gallery-link">
+                            <img src="images/gallery_thumb_3.jpg" alt="Celebración de gol de un equipo" class="gallery-thumbnail">
+                             <div class="gallery-overlay">
+                                <span class="icon-view">&#128269;</span>
+                                <p class="gallery-caption">¡Gol Agónico!</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="gallery-item" data-category="partidos">
+                        <a href="images/gallery_large_4.jpg" target="_blank" class="gallery-link">
+                            <img src="images/gallery_thumb_4.jpg" alt="Vista aérea de un estadio lleno" class="gallery-thumbnail">
+                             <div class="gallery-overlay">
+                                <span class="icon-view">&#128269;</span>
+                                <p class="gallery-caption">Estadio Vibrante</p>
+                            </div>
+                        </a>
+                    </article>
+                    
+                    <article class="gallery-item" data-category="jugadores">
+                        <a href="images/gallery_large_5.jpg" target="_blank" class="gallery-link">
+                            <img src="images/gallery_thumb_5.jpg" alt="Joven promesa en acción" class="gallery-thumbnail">
+                             <div class="gallery-overlay">
+                                <span class="icon-view">&#128269;</span>
+                                <p class="gallery-caption">Talento Emergente</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="gallery-item video-item" data-category="videos">
+                         <div class="video-thumbnail-container youtube-video" data-youtube-id="dQw4w9WgXcQ"> <img src="images/video_thumb_2.jpg" alt="Miniatura de video de habilidades" class="gallery-thumbnail video-thumb">
+                            <div class="gallery-overlay video-overlay">
+                                <span class="icon-play">&#9658;</span>
+                                <p class="gallery-caption">Tutorial de Habilidades</p>
+                            </div>
+                        </div>
+                        <div class="video-player-container" style="display: none;">
+                            <button class="close-video-btn" aria-label="Cerrar video">&times;</button>
+                        </div>
+                    </article>
+                    
+                    </div>
+                <p class="no-gallery-items" style="display:none;">No hay elementos en esta categoría.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="global-footer">
+        <div class="container footer-content">
+            <div class="footer-section contact-info">
+                <h4>Contacto</h4>
+                <p>Email: info@futbolnet.com</p>
+                <p>Teléfono: +123 456 7890</p>
+                <p>Dirección: Calle Falsa 123, Ciudad Fútbol</p>
+            </div>
+            <div class="footer-section social-media">
+                <h4>Síguenos</h4>
+                <a href="#" aria-label="Facebook">FB</a>
+                <a href="#" aria-label="Twitter">TW</a>
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="YouTube">YT</a>
+            </div>
+            <div class="footer-section corporate-info">
+                <h4>FutbolNet</h4>
+                <p>&copy; 2025 FutbolNet. Todos los derechos reservados.</p>
+                <p><a href="#">Política de Privacidad</a> | <a href="#">Términos de Uso</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Desarrollado con pasión por el fútbol.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/galeria.js"></script> </body>
+</html>

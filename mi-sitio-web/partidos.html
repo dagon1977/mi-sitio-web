@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutbolNet - Partidos</title>
+    <meta name="description" content="Calendario de partidos, resultados en vivo y marcadores finales de fútbol.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/partidos.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="global-header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Logo FutbolNet" class="logo-img">
+                    <span class="site-title">FutbolNet</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="noticias.html">Noticias</a></li>
+                    <li><a href="partidos.html" class="active">Partidos</a></li>
+                    <li><a href="equipos.html">Equipos</a></li>
+                    <li><a href="jugadores.html">Jugadores</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-button" aria-label="Abrir menú" aria-expanded="false">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <main class="main-partidos">
+        <div class="container">
+            <section class="matches-section">
+                <header class="section-header">
+                    <h1>Calendario y Resultados</h1>
+                    <p>Sigue los partidos en vivo, consulta los próximos encuentros y revisa los resultados.</p>
+                </header>
+
+                <div class="match-filters">
+                    <label for="date-filter">Filtrar por Fecha:</label>
+                    <input type="date" id="date-filter" name="date">
+                    
+                    <label for="league-filter">Filtrar por Liga:</label>
+                    <select id="league-filter" name="league">
+                        <option value="all">Todas las Ligas</option>
+                        <option value="liga-mx">Liga MX</option>
+                        <option value="la-liga">La Liga (España)</option>
+                        <option value="premier-league">Premier League (Inglaterra)</option>
+                        <option value="champions-league">Champions League</option>
+                    </select>
+                    <button class="filter-button">Buscar Partidos</button>
+                </div>
+
+                <div class="matches-category">
+                    <h2><span class="live-dot">&#11044;</span> Partidos en Vivo</h2>
+                    <div class="match-card live">
+                        <div class="match-header">
+                            <span class="match-league">Champions League - Semifinal</span>
+                            <span class="match-status">En Vivo - 75'</span>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team team-a">
+                                <img src="images/escudo_placeholder_a.png" alt="Escudo Equipo Alfa" class="team-logo">
+                                <span class="team-name">Real Portada</span>
+                            </div>
+                            <div class="match-score">
+                                <span class="score">2 - 1</span>
+                            </div>
+                            <div class="team team-b">
+                                <img src="images/escudo_placeholder_b.png" alt="Escudo Equipo Beta" class="team-logo">
+                                <span class="team-name">Atlético Central</span>
+                            </div>
+                        </div>
+                        <div class="match-footer">
+                            <a href="#" class="match-details-link">Ver Detalles &rarr;</a>
+                        </div>
+                    </div>
+                    <p class="no-matches-placeholder" style="display:none;">No hay partidos en vivo en este momento.</p>
+                </div>
+
+                <div class="matches-category">
+                    <h2>Próximos Partidos</h2>
+                    <div class="match-card upcoming">
+                        <div class="match-header">
+                            <span class="match-league">Liga Local - Jornada 15</span>
+                            <span class="match-date-time">29 Mayo, 2025 - 18:00 HS</span>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team team-a">
+                                <img src="images/escudo_placeholder_c.png" alt="Escudo Equipo Gamma" class="team-logo">
+                                <span class="team-name">Deportivo Oriental</span>
+                            </div>
+                            <div class="match-score">
+                                <span class="time">VS</span>
+                            </div>
+                            <div class="team team-b">
+                                <img src="images/escudo_placeholder_d.png" alt="Escudo Equipo Delta" class="team-logo">
+                                <span class="team-name">Unión del Sur</span>
+                            </div>
+                        </div>
+                         <div class="match-footer">
+                            <a href="#" class="match-details-link">Previa del Partido &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="match-card upcoming">
+                        <div class="match-header">
+                            <span class="match-league">Copa Nacional - Octavos</span>
+                            <span class="match-date-time">30 Mayo, 2025 - 21:00 HS</span>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team team-a">
+                                <img src="images/escudo_placeholder_a.png" alt="Escudo Equipo Alfa" class="team-logo">
+                                <span class="team-name">Real Portada</span>
+                            </div>
+                            <div class="match-score">
+                                <span class="time">VS</span>
+                            </div>
+                            <div class="team team-b">
+                                <img src="images/escudo_placeholder_d.png" alt="Escudo Equipo Delta" class="team-logo">
+                                <span class="team-name">Unión del Sur</span>
+                            </div>
+                        </div>
+                         <div class="match-footer">
+                            <a href="#" class="match-details-link">Previa del Partido &rarr;</a>
+                        </div>
+                    </div>
+                    </div>
+
+                <div class="matches-category">
+                    <h2>Resultados Recientes</h2>
+                    <div class="match-card finished">
+                        <div class="match-header">
+                            <span class="match-league">Premier League - Jornada 38</span>
+                            <span class="match-status">Finalizado</span>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team team-a">
+                                <img src="images/escudo_placeholder_b.png" alt="Escudo Equipo Beta" class="team-logo">
+                                <span class="team-name">Atlético Central</span>
+                            </div>
+                            <div class="match-score">
+                                <span class="score">0 - 3</span>
+                            </div>
+                            <div class="team team-b winner"> <img src="images/escudo_placeholder_c.png" alt="Escudo Equipo Gamma" class="team-logo">
+                                <span class="team-name">Deportivo Oriental</span>
+                            </div>
+                        </div>
+                         <div class="match-footer">
+                            <a href="#" class="match-details-link">Crónica del Partido &rarr;</a>
+                        </div>
+                    </div>
+                     <div class="match-card finished">
+                        <div class="match-header">
+                            <span class="match-league">Liga Local - Jornada 14</span>
+                            <span class="match-status">Finalizado</span>
+                        </div>
+                        <div class="match-teams">
+                            <div class="team team-a winner">
+                                <img src="images/escudo_placeholder_d.png" alt="Escudo Equipo Delta" class="team-logo">
+                                <span class="team-name">Unión del Sur</span>
+                            </div>
+                            <div class="match-score">
+                                <span class="score">2 - 2</span> </div>
+                            <div class="team team-b winner">
+                                <img src="images/escudo_placeholder_a.png" alt="Escudo Equipo Alfa" class="team-logo">
+                                <span class="team-name">Real Portada</span>
+                            </div>
+                        </div>
+                         <div class="match-footer">
+                            <a href="#" class="match-details-link">Crónica del Partido &rarr;</a>
+                        </div>
+                    </div>
+                    </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="global-footer">
+        <div class="container footer-content">
+            <div class="footer-section contact-info">
+                <h4>Contacto</h4>
+                <p>Email: info@futbolnet.com</p>
+                <p>Teléfono: +123 456 7890</p>
+                <p>Dirección: Calle Falsa 123, Ciudad Fútbol</p>
+            </div>
+            <div class="footer-section social-media">
+                <h4>Síguenos</h4>
+                <a href="#" aria-label="Facebook">FB</a>
+                <a href="#" aria-label="Twitter">TW</a>
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="YouTube">YT</a>
+            </div>
+            <div class="footer-section corporate-info">
+                <h4>FutbolNet</h4>
+                <p>&copy; 2025 FutbolNet. Todos los derechos reservados.</p>
+                <p><a href="#">Política de Privacidad</a> | <a href="#">Términos de Uso</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Desarrollado con pasión por el fútbol.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

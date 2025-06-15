@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutbolNet - Noticias</title>
+    <meta name="description" content="Todas las últimas noticias y actualizaciones del mundo del fútbol.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/noticias.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="global-header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Logo FutbolNet" class="logo-img">
+                    <span class="site-title">visionfutbol</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="noticias.html" class="active">Noticias</a></li>
+                    <li><a href="partidos.html">Partidos</a></li>
+                    <li><a href="equipos.html">Equipos</a></li>
+                    <li><a href="jugadores.html">Jugadores</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-button" aria-label="Abrir menú" aria-expanded="false">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <main class="main-noticias">
+        <div class="container">
+            <section class="news-listing-section">
+                <header class="section-header">
+                    <h1>Todas las Noticias</h1>
+                    <p>Mantente al día con las últimas novedades del fútbol mundial y local.</p>
+                </header>
+
+                <div class="filter-controls">
+                    <label for="category-filter">Filtrar por categoría:</label>
+                    <select id="category-filter" name="category">
+                        <option value="all">Todas</option>
+                        <option value="liga-local">Liga Local</option>
+                        <option value="fichajes">Fichajes</option>
+                        <option value="internacional">Internacional</option>
+                        <option value="copas">Copas</option>
+                    </select>
+                    <button class="filter-button">Filtrar</button>
+                </div>
+
+                <div class="news-list-grid">
+                    <article class="news-card">
+                        <img src="https://placehold.co/600x400" alt="Imagen de noticia 1" class="news-card-image">
+                        <div class="news-card-content">
+                            <span class="news-card-category">Liga Local</span>
+                            <h3 class="news-card-title"><a href="#">Gran Victoria del Equipo Local en el Clásico</a></h3>
+                            <p class="news-card-summary">El equipo de casa se impuso con un marcador de 3-0 en un partido emocionante...</p>
+                            <div class="news-card-metadata">
+                                <span class="date">27 Mayo, 2025</span>
+                                <span class="author">Por Juan Pérez</span>
+                            </div>
+                            <a href="#" class="read-more">Leer más &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <img src="images/placeholder-news2.jpg" alt="Imagen de noticia 2" class="news-card-image">
+                        <div class="news-card-content">
+                            <span class="news-card-category fichajes">Fichajes</span>
+                            <h3 class="news-card-title"><a href="#">Rumores de Fichajes Agitan el Mercado de Verano</a></h3>
+                            <p class="news-card-summary">Varios nombres importantes suenan para reforzar a los grandes clubes europeos...</p>
+                            <div class="news-card-metadata">
+                                <span class="date">26 Mayo, 2025</span>
+                                <span class="author">Por Ana Gómez</span>
+                            </div>
+                            <a href="#" class="read-more">Leer más &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <img src="images/placeholder-news3.jpg" alt="Imagen de noticia 3" class="news-card-image">
+                        <div class="news-card-content">
+                            <span class="news-card-category">Internacional</span>
+                            <h3 class="news-card-title"><a href="#">Resultados Sorpresa en la Champions League</a></h3>
+                            <p class="news-card-summary">La última jornada de la Champions dejó varios resultados inesperados y...</p>
+                            <div class="news-card-metadata">
+                                <span class="date">25 Mayo, 2025</span>
+                                <span class="author">Por Carlos Ruiz</span>
+                            </div>
+                            <a href="#" class="read-more">Leer más &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <img src="images/placeholder-news4.jpg" alt="Imagen de noticia 4" class="news-card-image">
+                        <div class="news-card-content">
+                            <span class="news-card-category">Copas</span>
+                            <h3 class="news-card-title"><a href="#">Definidos los Cruces de Cuartos de Final de la Copa Nacional</a></h3>
+                            <p class="news-card-summary">El sorteo ha deparado enfrentamientos muy interesantes para la siguiente ronda copera...</p>
+                            <div class="news-card-metadata">
+                                <span class="date">24 Mayo, 2025</span>
+                                <span class="author">Por Laura Méndez</span>
+                            </div>
+                            <a href="#" class="read-more">Leer más &rarr;</a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <img src="images/placeholder-news5.jpg" alt="Imagen de noticia 5" class="news-card-image">
+                        <div class="news-card-content">
+                            <span class="news-card-category">Liga Local</span>
+                            <h3 class="news-card-title"><a href="#">Análisis Previo: El Partido Clave de la Jornada</a></h3>
+                            <p class="news-card-summary">Todo lo que necesitas saber antes del enfrentamiento que podría definir al líder del torneo...</p>
+                            <div class="news-card-metadata">
+                                <span class="date">23 Mayo, 2025</span>
+                                <span class="author">Por David Costa</span>
+                            </div>
+                            <a href="#" class="read-more">Leer más &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <img src="images/placeholder-news6.jpg" alt="Imagen de noticia 6" class="news-card-image">
+                        <div class="news-card-content">
+                            <span class="news-card-category fichajes">Fichajes</span>
+                            <h3 class="news-card-title"><a href="#">Estrella Internacional en la Mira de Club Local</a></h3>
+                            <p class="news-card-summary">Fuentes cercanas al club confirman el interés por un jugador de renombre mundial...</p>
+                            <div class="news-card-metadata">
+                                <span class="date">22 Mayo, 2025</span>
+                                <span class="author">Por Sofía Núñez</span>
+                            </div>
+                            <a href="#" class="read-more">Leer más &rarr;</a>
+                        </div>
+                    </article>
+                    </div>
+
+                <nav class="pagination" aria-label="Paginación de noticias">
+                    <ul>
+                        <li><a href="#" class="page-link previous disabled" aria-disabled="true">&laquo; Anterior</a></li>
+                        <li><a href="#" class="page-link active" aria-current="page">1</a></li>
+                        <li><a href="#" class="page-link">2</a></li>
+                        <li><a href="#" class="page-link">3</a></li>
+                        <li><span class="page-link-dots">...</span></li>
+                        <li><a href="#" class="page-link">10</a></li>
+                        <li><a href="#" class="page-link next">Siguiente &raquo;</a></li>
+                    </ul>
+                </nav>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="global-footer">
+        <div class="container footer-content">
+            <div class="footer-section contact-info">
+                <h4>Contacto</h4>
+                <p>Email: info@futbolnet.com</p>
+                <p>Teléfono: +123 456 7890</p>
+                <p>Dirección: Calle Falsa 123, Ciudad Fútbol</p>
+            </div>
+            <div class="footer-section social-media">
+                <h4>Síguenos</h4>
+                <a href="#" aria-label="Facebook">FB</a>
+                <a href="#" aria-label="Twitter">TW</a>
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="YouTube">YT</a>
+            </div>
+            <div class="footer-section corporate-info">
+                <h4>FutbolNet</h4>
+                <p>&copy; 2025 FutbolNet. Todos los derechos reservados.</p>
+                <p><a href="#">Política de Privacidad</a> | <a href="#">Términos de Uso</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Desarrollado con pasión por el fútbol.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

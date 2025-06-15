@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutbolNet - Equipos</title>
+    <meta name="description" content="Descubre información sobre los principales equipos de fútbol, sus plantillas y estadísticas.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/equipos.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="global-header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Logo FutbolNet" class="logo-img">
+                    <span class="site-title">FutbolNet</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="noticias.html">Noticias</a></li>
+                    <li><a href="partidos.html">Partidos</a></li>
+                    <li><a href="equipos.html" class="active">Equipos</a></li>
+                    <li><a href="jugadores.html">Jugadores</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-button" aria-label="Abrir menú" aria-expanded="false">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <main class="main-equipos">
+        <div class="container">
+            <section class="teams-section">
+                <header class="section-header">
+                    <h1>Explora los Equipos</h1>
+                    <p>Encuentra información detallada sobre tus equipos de fútbol favoritos.</p>
+                </header>
+
+                <div class="team-filters">
+                    <input type="search" id="team-search" name="search" placeholder="Buscar equipo por nombre...">
+                    <select id="league-filter-teams" name="league">
+                        <option value="all">Todas las Ligas</option>
+                        <option value="liga-local">Liga Local</option>
+                        <option value="la-liga">La Liga (España)</option>
+                        <option value="premier-league">Premier League (Inglaterra)</option>
+                        <option value="serie-a">Serie A (Italia)</option>
+                        <option value="bundesliga">Bundesliga (Alemania)</option>
+                        <option value="ligue-1">Ligue 1 (Francia)</option>
+                        <option value="mls">MLS (EEUU)</option>
+                    </select>
+                    <button class="filter-button">Buscar</button>
+                </div>
+
+                <div class="teams-grid">
+                    <article class="team-card">
+                        <a href="equipo-detalle.html?id=real-portada" class="team-card-link">
+                            <img src="images/escudo_placeholder_a.png" alt="Escudo Real Portada" class="team-logo">
+                            <h3 class="team-name">Real Portada</h3>
+                            <p class="team-league">Liga Local Principal</p>
+                            <span class="team-country">Chile</span>
+                        </a>
+                    </article>
+
+                    <article class="team-card">
+                        <a href="equipo-detalle.html?id=atletico-central" class="team-card-link">
+                            <img src="images/escudo_placeholder_b.png" alt="Escudo Atlético Central" class="team-logo">
+                            <h3 class="team-name">Atlético Central</h3>
+                            <p class="team-league">Premier League</p>
+                            <span class="team-country">Inglaterra</span>
+                        </a>
+                    </article>
+
+                    <article class="team-card">
+                        <a href="equipo-detalle.html?id=deportivo-oriental" class="team-card-link">
+                            <img src="images/escudo_placeholder_c.png" alt="Escudo Deportivo Oriental" class="team-logo">
+                            <h3 class="team-name">Deportivo Oriental</h3>
+                            <p class="team-league">La Liga</p>
+                            <span class="team-country">España</span>
+                        </a>
+                    </article>
+
+                    <article class="team-card">
+                        <a href="equipo-detalle.html?id=union-del-sur" class="team-card-link">
+                            <img src="images/escudo_placeholder_d.png" alt="Escudo Unión del Sur" class="team-logo">
+                            <h3 class="team-name">Unión del Sur</h3>
+                            <p class="team-league">Serie A</p>
+                            <span class="team-country">Italia</span>
+                        </a>
+                    </article>
+                    
+                    <article class="team-card">
+                        <a href="equipo-detalle.html?id=fc-innovacion" class="team-card-link">
+                            <img src="images/escudo_placeholder_generic1.png" alt="Escudo FC Innovación" class="team-logo">
+                            <h3 class="team-name">FC Innovación</h3>
+                            <p class="team-league">Bundesliga</p>
+                            <span class="team-country">Alemania</span>
+                        </a>
+                    </article>
+
+                    <article class="team-card">
+                        <a href="equipo-detalle.html?id=juventud-digital" class="team-card-link">
+                            <img src="images/escudo_placeholder_generic2.png" alt="Escudo Juventud Digital" class="team-logo">
+                            <h3 class="team-name">Juventud Digital</h3>
+                            <p class="team-league">Ligue 1</p>
+                            <span class="team-country">Francia</span>
+                        </a>
+                    </article>
+                     <article class="team-card">
+                        <a href="equipo-detalle.html?id=los-angeles-coders" class="team-card-link">
+                            <img src="images/escudo_placeholder_generic3.png" alt="Escudo Los Angeles Coders" class="team-logo">
+                            <h3 class="team-name">Los Angeles Coders</h3>
+                            <p class="team-league">MLS</p>
+                            <span class="team-country">EEUU</span>
+                        </a>
+                    </article>
+                     <article class="team-card">
+                        <a href="equipo-detalle.html?id=santiago-saints" class="team-card-link">
+                            <img src="images/escudo_placeholder_generic4.png" alt="Escudo Santiago Saints" class="team-logo">
+                            <h3 class="team-name">Santiago Saints</h3>
+                            <p class="team-league">Liga Local Principal</p>
+                            <span class="team-country">Chile</span>
+                        </a>
+                    </article>
+                    </div>
+                <p class="no-teams-found" style="display:none;">No se encontraron equipos con los criterios seleccionados.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="global-footer">
+        <div class="container footer-content">
+            <div class="footer-section contact-info">
+                <h4>Contacto</h4>
+                <p>Email: info@futbolnet.com</p>
+                <p>Teléfono: +123 456 7890</p>
+                <p>Dirección: Calle Falsa 123, Ciudad Fútbol</p>
+            </div>
+            <div class="footer-section social-media">
+                <h4>Síguenos</h4>
+                <a href="#" aria-label="Facebook">FB</a>
+                <a href="#" aria-label="Twitter">TW</a>
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="YouTube">YT</a>
+            </div>
+            <div class="footer-section corporate-info">
+                <h4>FutbolNet</h4>
+                <p>&copy; 2025 FutbolNet. Todos los derechos reservados.</p>
+                <p><a href="#">Política de Privacidad</a> | <a href="#">Términos de Uso</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Desarrollado con pasión por el fútbol.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

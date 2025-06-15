@@ -1,0 +1,1682 @@
+/* ==========================================================================
+
+```css
+/* ==========================================================================
+   Contenido de: css/style.css (Estilos Globales)
+   ========================================================================== */
+
+/* --- RESET BÁSICO Y CONFIGURACIÓN GLOBAL --- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Paleta de colores inspirada en el fútbol */
+    --color-primary-green: #28a745; /* Verde césped */
+    --color-secondary-green: #1e7e34; /* Verde más oscuro */
+    --color-white: #ffffff;
+    --color-black: #1c1c1c;
+    --color-dark-grey: #343a40;
+    --color-medium-grey: #6c757d;
+    --color-light-grey: #f8f9fa; /* Fondo general suave */
+    --color-accent-gold: #ffc107;
+    --color-accent-blue: #007bff;
+    --color-text: #333333;
+    --color-text-muted: #555555;
+
+    /* Tipografía */
+    --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Fuente moderna y legible */
+    --font-headings: 'Roboto', 'Arial Black', sans-serif; /* Fuente diferenciada para títulos */
+    --font-monospace: 'Courier New', Courier, monospace;
+
+    /* Sombras */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+
+    /* Transiciones */
+    --transition-smooth: all 0.3s ease-in-out;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    background-color: var(--color-light-grey);
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary-green);
+    transition: var(--transition-smooth);
+}
+
+a:hover {
+    color: var(--color-secondary-green);
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    color: var(--color-black);
+    margin-bottom: 0.75em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; } /* Ajustado para consistencia con otras secciones */
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.2rem; }
+
+
+ul {
+    list-style: none;
+}
+
+/* --- ENCABEZADO GLOBAL --- */
+.global-header {
+    background-color: var(--color-dark-grey);
+    color: var(--color-white);
+    padding: 1rem 0;
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.logo-img {
+    height: 60px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+.logo-container a:hover .logo-img {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+.site-title {
+    font-family: var(--font-headings);
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 20px;
+}
+
+.main-nav a {
+    color: var(--color-light-grey);
+    padding: 0.5em 0.8em;
+    border-radius: 4px;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+}
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent-gold);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--color-white);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.main-nav a:hover::after,
+.main-nav a.active::after {
+   width: 100%;
+}
+
+.mobile-menu-button {
+    display: none; /* Oculto en desktop */
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* --- PIE DE PÁGINA UNIFICADO --- */
+.global-footer {
+    background-color: var(--color-black);
+    color: var(--color-light-grey);
+    padding: 2rem 0 1rem;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px; /* Para que se adapten mejor en pantallas pequeñas */
+}
+
+.footer-section h4 {
+    color: var(--color-accent-gold);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 0.9rem;
+    color: var(--color-medium-grey);
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a:hover {
+    color: var(--color-white);
+}
+
+.social-media a {
+    margin-right: 10px;
+    font-size: 1.2rem; /* Placeholder, usar íconos SVG o FontAwesome */
+    padding: 5px;
+    border: 1px solid var(--color-medium-grey);
+    border-radius: 4px;
+}
+.social-media a:hover {
+    border-color: var(--color-accent-gold);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-dark-grey);
+    font-size: 0.8rem;
+    color: var(--color-medium-grey);
+}
+
+/* Estilos comunes para encabezados de sección */
+.section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.section-header h1 { /* h1 ya está definido globalmente, esto es para el p */
+    color: var(--color-dark-grey);
+    margin-bottom: 0.5rem;
+}
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--color-medium-grey);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Placeholder para "no items found" común */
+.no-items-placeholder, 
+.no-matches-placeholder,
+.no-teams-found,
+.no-players-found,
+.no-gallery-items {
+    text-align: center;
+    color: var(--color-medium-grey);
+    font-style: italic;
+    padding: 1rem;
+    background-color: var(--color-light-grey);
+    border-radius: 4px;
+    margin-top: 1rem; /* Espacio si es el único contenido */
+}
+
+
+/* --- RESPONSIVE DESIGN (BREAKPOINTS BÁSICOS) --- */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none; /* Ocultar menú principal en móvil */
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--color-dark-grey);
+        position: absolute;
+        top: 100%; /* Debajo del header */
+        left: 0;
+        padding: 1rem 0;
+    }
+
+    .main-nav.active { /* Clase que se añadirá con JS */
+        display: flex;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-nav li {
+        margin: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+    .main-nav a {
+        display: block;
+        padding: 0.8rem;
+    }
+    .main-nav a::after {
+        display: none; /* Quitar subrayado animado en móvil */
+    }
+
+
+    .mobile-menu-button {
+        display: block; /* Mostrar botón hamburguesa */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-section {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .site-title {
+        font-size: 1.5rem;
+    }
+    .logo-img {
+        height: 40px;
+    }
+    h1 { font-size: 2rem; } /* Ajustado para móviles */
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.3rem; }
+}
+
+
+/* ==========================================================================
+   Contenido de: css/inicio.css (Estilos Específicos para la Página de Inicio)
+   ========================================================================== */
+
+/* --- ESTILOS PARA LA PÁGINA DE INICIO --- */
+
+.main-inicio {
+    padding: 2rem 0;
+    flex-grow: 1; /* Asegura que main ocupe el espacio disponible */
+}
+
+.main-layout { /* Usado en Inicio para la estructura de dos columnas */
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* 75% para noticias, 25% para sidebar */
+    gap: 2rem;
+}
+
+.news-grid-section h2 { /* Título "Últimas Noticias" */
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-primary-green);
+    display: inline-block; /* Para que el borde solo ocupe el ancho del texto */
+}
+
+.news-grid { /* Contenedor de las tarjetas de noticias en Inicio */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Estilos de Tarjeta de Noticia (Común para Inicio y Noticias) */
+/* Se podría mover a style.css si se usa en más de 2 sitios y es idéntico */
+.news-card {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden; /* Para que la imagen no se salga si tiene bordes redondeados */
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-smooth);
+    border: 1px solid #e0e0e0;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.news-card-image {
+    width: 100%;
+    height: 200px; /* Altura fija para la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+}
+
+.news-card-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Para que el contenido ocupe el espacio y el botón "Leer más" se alinee abajo */
+}
+
+.news-card-category {
+    display: inline-block;
+    background-color: var(--color-accent-blue);
+    color: var(--color-white);
+    padding: 0.25em 0.6em;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    align-self: flex-start; /* Para que no ocupe todo el ancho */
+    text-transform: uppercase;
+    font-weight: bold;
+}
+/* Categoría alternativa */
+.news-card-content .news-card-category.fichajes {
+    background-color: var(--color-accent-gold);
+    color: var(--color-black);
+}
+.news-card-content .news-card-category.internacional {
+    background-color: #dc3545; /* Rojo para internacional */
+}
+.news-card-content .news-card-category.copas {
+    background-color: #6f42c1; /* Púrpura para copas */
+}
+
+
+.news-card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-black);
+}
+.news-card-title a {
+    color: inherit; /* Hereda el color del h3 */
+    text-decoration: none;
+}
+.news-card-title a:hover {
+    color: var(--color-primary-green);
+}
+
+
+.news-card-summary {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Empuja metadatos y botón hacia abajo */
+}
+
+.news-card-metadata {
+    font-size: 0.8rem;
+    color: var(--color-medium-grey);
+    margin-bottom: 1rem;
+}
+
+.news-card-metadata .date::after {
+    content: ' | ';
+    margin: 0 5px;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    margin-top: auto; /* Alinea el botón al final de la tarjeta */
+    align-self: flex-start;
+}
+
+.read-more:hover {
+    background-color: var(--color-secondary-green);
+    color: var(--color-white);
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+/* --- SIDEBAR (Específico de Inicio) --- */
+.sidebar .widget {
+    background-color: var(--color-white);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #e7e7e7;
+}
+
+.sidebar .widget h4 {
+    margin-bottom: 1rem;
+    color: var(--color-dark-grey);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar .widget ul li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar .widget ul li a {
+    color: var(--color-primary-green);
+    font-size: 0.9rem;
+}
+.sidebar .widget ul li a:hover {
+    color: var(--color-secondary-green);
+}
+
+.sidebar .widget table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+.sidebar .widget th, .sidebar .widget td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+.sidebar .widget th {
+    background-color: var(--color-light-grey);
+}
+
+
+/* --- RESPONSIVE PARA INICIO --- */
+@media (max-width: 992px) { /* Tablets y layouts más pequeños */
+    .main-layout { /* En Inicio, el sidebar va abajo */
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 576px) { /* Móviles */
+    .news-grid { /* También aplica a Inicio */
+        grid-template-columns: 1fr; /* Una columna para tarjetas de noticias */
+    }
+    .news-card-title {
+        font-size: 1.1rem;
+    }
+    .news-card-summary {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* ==========================================================================
+   Contenido de: css/noticias.css (Estilos Específicos para la Página de Noticias)
+   ========================================================================== */
+
+.main-noticias {
+    padding: 2rem 0;
+    flex-grow: 1;
+}
+
+/* .section-header para noticias está en style.css */
+
+.filter-controls {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap; /* Para que se adapte en móviles */
+}
+
+.filter-controls label {
+    font-weight: bold;
+    color: var(--color-dark-grey);
+}
+
+.filter-controls select {
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    min-width: 150px; /* Ancho mínimo para el select */
+}
+
+.filter-button { /* Estilo base para botones de filtro */
+    padding: 0.6em 1.2em;
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition-smooth);
+}
+
+.filter-button:hover {
+    background-color: var(--color-secondary-green);
+}
+
+
+/* --- ESTILOS PARA LAS TARJETAS DE NOTICIAS (REUTILIZADOS DE INICIO.CSS) --- */
+/* Los estilos de .news-card, .news-card-image, etc., están en la sección de inicio.css */
+/* Aquí solo se listan estilos que podrían ser específicos de la página de noticias si los hubiera */
+
+.news-list-grid { /* Contenedor de tarjetas en página de Noticias */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Mismo grid que en inicio */
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+
+/* --- PAGINACIÓN --- */
+.pagination {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.pagination ul {
+    display: inline-flex; /* Usa inline-flex para centrar correctamente */
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden; /* Para redondear los bordes de los hijos */
+}
+
+/* .pagination li rule removed because it was empty */
+
+.pagination .page-link {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1rem;
+    margin-left: -1px; /* Para que los bordes se superpongan correctamente */
+    line-height: 1.25;
+    color: var(--color-primary-green);
+    background-color: var(--color-white);
+    border: 1px solid #dee2e6;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.pagination li:first-child .page-link {
+    margin-left: 0;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+.pagination li:last-child .page-link {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.pagination .page-link:hover {
+    z-index: 2;
+    color: var(--color-secondary-green);
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+.pagination .page-link.active,
+.pagination .page-link.active:hover {
+    z-index: 3;
+    color: var(--color-white);
+    background-color: var(--color-primary-green);
+    border-color: var(--color-primary-green);
+}
+
+.pagination .page-link.disabled,
+.pagination .page-link.disabled:hover {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: auto;
+    background-color: var(--color-white);
+    border-color: #dee2e6;
+}
+.pagination .page-link-dots {
+    padding: 0.75rem 1rem;
+    color: #6c757d;
+    border: 1px solid #dee2e6;
+    margin-left: -1px;
+}
+
+
+/* --- RESPONSIVE PARA NOTICIAS --- */
+@media (max-width: 576px) { /* Móviles */
+    /* .section-header h1 y p ya tienen estilos responsivos globales */
+    /* .news-list-grid usa el .news-grid responsivo de inicio.css */
+    
+    .filter-controls { /* Específico de noticias y otras páginas con filtros */
+        flex-direction: column;
+        align-items: stretch; /* Para que el select y botón ocupen el ancho */
+    }
+    .filter-controls select, .filter-controls .filter-button {
+        width: 100%;
+    }
+    .pagination .page-link {
+        padding: 0.5rem 0.75rem; /* Más pequeños en móvil */
+    }
+}
+
+
+/* ==========================================================================
+   Contenido de: css/partidos.css (Estilos Específicos para la Página de Partidos)
+   ========================================================================== */
+
+.main-partidos {
+    padding: 2rem 0;
+    flex-grow: 1;
+}
+
+/* .section-header para partidos está en style.css */
+
+.match-filters { /* Similar a .filter-controls pero con nombre específico */
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrar los filtros */
+}
+.match-filters label {
+    font-weight: bold;
+    color: var(--color-dark-grey);
+    margin-right: 0.5rem;
+}
+.match-filters input[type="date"],
+.match-filters select {
+    padding: 0.5rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    min-width: 180px;
+}
+.match-filters .filter-button { /* Hereda de .filter-button, pero podemos ajustar */
+    background-color: var(--color-accent-blue); /* Color diferente para este botón */
+}
+.match-filters .filter-button:hover {
+    background-color: #0056b3; /* Azul más oscuro para hover */
+}
+
+
+/* Categorías de Partidos (En Vivo, Próximos, Resultados) */
+.matches-category {
+    margin-bottom: 3rem;
+}
+.matches-category h2 {
+    font-size: 1.8rem;
+    color: var(--color-dark-grey);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-primary-green);
+}
+.matches-category h2 .live-dot {
+    color: var(--color-primary-green); /* Podría ser rojo para 'en vivo' */
+    font-size: 1em; /* Ajustar si es necesario */
+    margin-right: 8px;
+    animation: blink 1.5s infinite; /* Animación para el punto en vivo */
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+
+/* Tarjeta de Partido Individual */
+.match-card {
+    background-color: var(--color-white);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    transition: var(--transition-smooth);
+}
+.match-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.match-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px dashed #eee;
+    font-size: 0.9rem;
+    color: var(--color-medium-grey);
+}
+.match-league {
+    font-weight: bold;
+}
+.match-status, .match-date-time {
+    background-color: var(--color-light-grey);
+    padding: 0.25em 0.6em;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+.match-card.live .match-status {
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+    font-weight: bold;
+}
+.match-card.finished .match-status {
+    background-color: var(--color-medium-grey);
+    color: var(--color-white);
+}
+
+
+.match-teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%; /* Ancho para cada equipo */
+}
+.team-logo {
+    width: 60px; /* Ajustar según tamaño de logos */
+    height: 60px;
+    object-fit: contain; /* Para que el logo no se deforme */
+    margin-bottom: 0.5rem;
+}
+.team-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--color-dark-grey);
+}
+.team.winner .team-name { /* Para destacar al ganador */
+    color: var(--color-primary-green);
+}
+
+.match-score {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-black);
+    width: 20%; /* Ancho para el marcador/vs */
+    text-align: center;
+}
+.match-score .time { /* Para "VS" en próximos partidos */
+    font-size: 1.5rem;
+    color: var(--color-medium-grey);
+}
+
+.match-footer {
+    margin-top: 1.5rem;
+    text-align: right;
+}
+.match-details-link {
+    font-size: 0.9rem;
+    color: var(--color-accent-blue);
+    text-decoration: none;
+    font-weight: 500;
+}
+.match-details-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* .no-matches-placeholder está en style.css */
+
+
+/* --- RESPONSIVE PARA PARTIDOS --- */
+@media (max-width: 768px) {
+    .match-filters { /* Hereda de .filter-controls */
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .match-filters input[type="date"],
+    .match-filters select,
+    .match-filters .filter-button {
+        width: 100%;
+        margin-bottom: 0.5rem; /* Espacio entre elementos en móvil */
+    }
+    .match-filters label {
+        margin-bottom: 0.25rem;
+        display: block; /* Para que ocupe su línea */
+    }
+
+    .team-name {
+        font-size: 1rem;
+    }
+    .team-logo {
+        width: 50px;
+        height: 50px;
+    }
+    .match-score {
+        font-size: 1.5rem;
+    }
+    .match-score .time {
+        font-size: 1.2rem;
+    }
+    .match-card {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) { /* Móviles más pequeños */
+    /* .section-header h1 ya tiene estilos responsivos globales */
+    .matches-category h2 {
+        font-size: 1.5rem;
+    }
+    .team {
+        width: 30%; /* Reducir un poco más para nombres largos */
+    }
+    .team-name {
+        font-size: 0.85rem; /* Nombres más pequeños para que quepan */
+        word-break: break-word; /* Si el nombre es muy largo */
+    }
+    .match-score {
+        width: 30%; /* Más espacio para el score */
+    }
+    .team-logo {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+/* ==========================================================================
+   Contenido de: css/equipos.css (Estilos Específicos para la Página de Equipos)
+   ========================================================================== */
+
+.main-equipos {
+    padding: 2rem 0;
+    flex-grow: 1;
+}
+
+/* .section-header para equipos está en style.css */
+
+/* Filtros de Equipos */
+.team-filters { /* Similar a .filter-controls y .match-filters */
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.team-filters input[type="search"] {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    flex-grow: 1; /* Para que ocupe más espacio */
+    min-width: 200px;
+}
+.team-filters select { /* Hereda de .filter-controls select */
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    min-width: 180px;
+}
+.team-filters .filter-button { /* Hereda de .filter-button */
+    background-color: var(--color-accent-gold); /* Color distintivo */
+    color: var(--color-black);
+}
+.team-filters .filter-button:hover {
+    background-color: #e0a800; /* Dorado más oscuro */
+}
+
+
+/* Cuadrícula de Equipos */
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem; /* Espacio entre tarjetas */
+}
+
+.team-card {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: var(--transition-smooth);
+    overflow: hidden; /* Para que el enlace no se salga de los bordes redondeados */
+    border: 1px solid #e9ecef;
+}
+.team-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent-gold);
+}
+
+.team-card-link {
+    display: block;
+    padding: 1.5rem 1rem;
+    text-decoration: none;
+    color: inherit; /* Heredar color para no tener el azul por defecto de 'a' */
+}
+
+.team-card .team-logo { /* Más específico para evitar conflictos */
+    width: 100px; /* Tamaño del logo */
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto 1rem auto; /* Centrar y espaciar */
+    transition: transform 0.3s ease;
+}
+.team-card:hover .team-logo {
+    transform: scale(1.1);
+}
+
+.team-card .team-name { /* Más específico */
+    font-size: 1.3rem;
+    color: var(--color-dark-grey);
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.team-league {
+    font-size: 0.9rem;
+    color: var(--color-medium-grey);
+    margin-bottom: 0.5rem;
+}
+
+.team-country {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    display: inline-block;
+    padding: 0.2em 0.5em;
+    background-color: var(--color-light-grey);
+    border-radius: 3px;
+    border: 1px solid #ddd;
+}
+/* .no-teams-found está en style.css */
+.no-teams-found {
+    grid-column: 1 / -1; /* Para que ocupe todo el ancho de la grid si no hay equipos */
+}
+
+/* --- RESPONSIVE PARA EQUIPOS --- */
+@media (max-width: 768px) {
+    .teams-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1rem;
+    }
+    .team-filters { /* Hereda de .filter-controls */
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .team-filters input[type="search"],
+    .team-filters select,
+    .team-filters .filter-button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    .team-card .team-logo {
+        width: 80px;
+        height: 80px;
+    }
+    .team-card .team-name {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .teams-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Más pequeñas para móvil */
+    }
+    /* .section-header h1 ya tiene estilos responsivos globales */
+    .team-card-link {
+        padding: 1rem 0.5rem;
+    }
+     .team-card .team-logo {
+        width: 70px;
+        height: 70px;
+    }
+    .team-card .team-name {
+        font-size: 1rem;
+    }
+    .team-league, .team-country {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* ==========================================================================
+   Contenido de: css/jugadores.css (Estilos Específicos para la Página de Jugadores)
+   ========================================================================== */
+
+.main-jugadores {
+    padding: 2rem 0;
+    flex-grow: 1;
+}
+
+/* .section-header para jugadores está en style.css */
+
+/* Filtros de Jugadores */
+.player-filters { /* Similar a filtros anteriores */
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.player-filters input[type="search"] {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    flex-grow: 1;
+    min-width: 200px;
+}
+.player-filters select { /* Hereda de .filter-controls select */
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+    min-width: 160px;
+}
+.player-filters .filter-button { /* Hereda de .filter-button */
+    background-color: var(--color-primary-green); /* Verde para este filtro */
+}
+.player-filters .filter-button:hover {
+    background-color: var(--color-secondary-green);
+}
+
+/* Cuadrícula de Jugadores */
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.player-card {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden; /* Para que el enlace no se salga */
+    transition: var(--transition-smooth);
+    border: 1px solid #e9ecef;
+}
+.player-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary-green);
+}
+
+.player-card-link {
+    display: flex; /* Para alinear imagen e info */
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    height: 100%; /* Para que todas las tarjetas tengan la misma altura si el contenido varía */
+}
+
+.player-image-container {
+    width: 100%;
+    height: 220px; /* Altura fija para la imagen */
+    background-color: var(--color-light-grey); /* Fondo para la imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.player-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cubre el contenedor, puede recortar */
+    transition: transform 0.4s ease;
+}
+.player-card:hover .player-photo {
+    transform: scale(1.05);
+}
+
+.player-info {
+    padding: 1rem;
+    text-align: left;
+    flex-grow: 1; /* Para que ocupe el espacio restante */
+    display: flex;
+    flex-direction: column;
+}
+
+.player-name {
+    font-size: 1.4rem;
+    font-family: var(--font-headings);
+    color: var(--color-black);
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.player-card .player-team, /* Más específico */
+.player-position {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.25rem;
+}
+.player-card .player-team {
+    font-weight: 500;
+}
+
+.player-nationality {
+    font-size: 0.9rem;
+    color: var(--color-medium-grey);
+    margin-top: auto; /* Empuja la nacionalidad al final de la tarjeta si hay espacio */
+    padding-top: 0.5rem; /* Espacio por si hay otros elementos arriba */
+    display: flex;
+    align-items: center;
+}
+.flag-icon {
+    width: 20px;
+    height: auto;
+    margin-right: 8px;
+    border: 1px solid #ddd; /* Borde sutil para las banderas */
+}
+/* .no-players-found está en style.css */
+.no-players-found {
+    grid-column: 1 / -1; /* Para que ocupe todo el ancho de la grid */
+}
+
+/* --- RESPONSIVE PARA JUGADORES --- */
+@media (max-width: 768px) {
+    .players-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    .player-filters { /* Hereda de .filter-controls */
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .player-filters input[type="search"],
+    .player-filters select,
+    .player-filters .filter-button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    .player-name {
+        font-size: 1.2rem;
+    }
+    .player-image-container {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .players-grid {
+        grid-template-columns: 1fr; /* Una columna en móviles muy pequeños */
+    }
+    /* .section-header h1 ya tiene estilos responsivos globales */
+    .player-image-container {
+        height: 200px; /* Puede ser un poco más alto en una sola columna */
+    }
+    .player-name {
+        font-size: 1.3rem;
+    }
+}
+
+/* ==========================================================================
+   Contenido de: css/galeria.css (Estilos Específicos para la Página de Galería)
+   ========================================================================== */
+
+.main-galeria {
+    padding: 2rem 0;
+    flex-grow: 1;
+}
+
+/* .section-header para galeria está en style.css */
+
+/* Filtros de Galería */
+.gallery-filters {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.gallery-filters .filter-btn { /* Estilo específico para botones de filtro de galería */
+    background-color: var(--color-white);
+    color: var(--color-primary-green);
+    border: 1px solid var(--color-primary-green);
+    padding: 0.6em 1.2em;
+    margin: 0.3em;
+    border-radius: 20px; /* Botones más redondeados */
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+}
+.gallery-filters .filter-btn:hover,
+.gallery-filters .filter-btn.active {
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Cuadrícula de Galería */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    background-color: var(--color-black); /* Fondo mientras carga imagen */
+    aspect-ratio: 16 / 10; /* Proporción para las miniaturas */
+    cursor: pointer;
+}
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+.gallery-item:hover .gallery-thumbnail {
+    transform: scale(1.1);
+}
+
+.gallery-link, .video-thumbnail-container {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.gallery-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    padding: 1rem;
+}
+.gallery-overlay .icon-view,
+.gallery-overlay .icon-play {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+.gallery-overlay .gallery-caption {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Estilos para Video Items */
+.video-item .video-player-container {
+    position: fixed; /* Overlay para el video */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Por encima de todo */
+    padding: 20px;
+}
+.video-item .video-player-container video,
+.video-item .video-player-container iframe {
+    max-width: 90%;
+    max-height: 90%;
+    border: 3px solid var(--color-white);
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+}
+.video-item .close-video-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background-color: rgba(0,0,0,0.5);
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-smooth);
+}
+.video-item .close-video-btn:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    transform: scale(1.1);
+}
+
+/* .no-gallery-items está en style.css */
+.no-gallery-items {
+    grid-column: 1 / -1;
+}
+
+/* --- RESPONSIVE PARA GALERÍA --- */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    .gallery-overlay .icon-view,
+    .gallery-overlay .icon-play {
+        font-size: 2rem;
+    }
+    .gallery-overlay .gallery-caption {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+     .gallery-filters .filter-btn {
+        padding: 0.5em 1em;
+        font-size: 0.9rem;
+    }
+    .video-item .close-video-btn {
+        top: 15px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+}
+
+
+/* ==========================================================================
+   Contenido de: css/contacto.css (Estilos Específicos para la Página de Contacto)
+   ========================================================================== */
+
+.main-contacto {
+    padding: 2rem 0;
+    flex-grow: 1;
+}
+
+/* .section-header para contacto está en style.css */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Formulario más ancho que la info */
+    gap: 2.5rem;
+}
+
+/* Contenedor del Formulario */
+.contact-form-container {
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+}
+.contact-form-container h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--color-dark-grey);
+    border-bottom: 2px solid var(--color-primary-green);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+    font-size: 0.95rem;
+}
+.contact-form .required-asterisk {
+    color: var(--color-primary-green); /* O un rojo como #dc3545 */
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-primary-green);
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+    outline: none;
+}
+.contact-form textarea {
+    resize: vertical; /* Permitir redimensionar verticalmente */
+    min-height: 120px;
+}
+.contact-form .form-checkbox {
+    display: flex;
+    align-items: flex-start; /* Alinear checkbox con el inicio del texto */
+    gap: 0.5rem;
+}
+.contact-form .form-checkbox input[type="checkbox"] {
+    width: auto;
+    margin-top: 0.2em; /* Ajuste vertical del checkbox */
+    accent-color: var(--color-primary-green);
+}
+.contact-form .form-checkbox label {
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+.contact-form .form-checkbox label a {
+    color: var(--color-primary-green);
+}
+.contact-form .form-checkbox label a:hover {
+    text-decoration: underline;
+}
+.contact-form .submit-button {
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+    padding: 0.8em 1.8em;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    display: inline-block; /* Para que no ocupe todo el ancho */
+}
+.contact-form .submit-button:hover {
+    background-color: var(--color-secondary-green);
+    transform: translateY(-2px);
+}
+.contact-form .submit-button:active {
+    transform: translateY(0);
+}
+
+/* Mensajes de validación y feedback */
+.validation-message {
+    font-size: 0.85rem;
+    color: #dc3545; /* Rojo para errores */
+    margin-top: 0.25rem;
+    display: none; /* Oculto por defecto, se muestra con JS */
+}
+.contact-form input.invalid,
+.contact-form textarea.invalid {
+    border-color: #dc3545;
+}
+.contact-form input.valid,
+.contact-form textarea.valid {
+    border-color: var(--color-primary-green);
+}
+
+.form-feedback {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+.form-feedback.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.form-feedback.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+
+/* Información Adicional (Aside) */
+.contact-info-aside {
+    background-color: var(--color-light-grey); /* Fondo sutil para diferenciar */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+}
+.contact-info-aside h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--color-dark-grey);
+}
+.contact-details .contact-detail-item {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.contact-details .contact-detail-item strong {
+    display: block;
+    color: var(--color-black);
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+.contact-details .contact-detail-item p {
+    color: var(--color-text-muted);
+    margin: 0;
+}
+.contact-details .contact-detail-item a {
+    color: var(--color-primary-green);
+}
+.contact-details .contact-detail-item a:hover {
+    text-decoration: underline;
+}
+/* Iconos placeholder (requerirían una fuente de iconos o SVGs) */
+.contact-detail-item .icon-map-marker::before { content: "📍 "; }
+.contact-detail-item .icon-phone::before { content: "📞 "; }
+.contact-detail-item .icon-envelope::before { content: "✉️ "; }
+.contact-detail-item .icon-clock::before { content: "🕒 "; }
+
+.map-container {
+    margin-top: 2rem;
+}
+.map-container h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--color-dark-grey);
+}
+.map-container iframe {
+    border-radius: 6px;
+    filter: grayscale(30%); /* Estilo sutil para el mapa */
+    transition: filter 0.3s ease;
+}
+.map-container iframe:hover {
+    filter: grayscale(0%);
+}
+
+
+/* --- RESPONSIVE PARA CONTACTO --- */
+@media (max-width: 992px) { /* Tablets */
+    .contact-layout {
+        grid-template-columns: 1fr; /* Apilar en tablets */
+    }
+    .contact-info-aside {
+        margin-top: 2rem; /* Espacio cuando se apila */
+    }
+}
+
+@media (max-width: 576px) { /* Móviles */
+    .contact-form-container, .contact-info-aside {
+        padding: 1.5rem;
+    }
+    .contact-form-container h2 {
+        font-size: 1.6rem;
+    }
+    .contact-info-aside h2 {
+        font-size: 1.4rem;
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+    .contact-form .submit-button {
+        width: 100%; /* Botón de ancho completo en móvil */
+        padding: 0.9em;
+    }
+    .map-container iframe {
+        height: 250px; /* Reducir altura del mapa */
+    }
+}

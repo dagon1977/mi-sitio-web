@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutbolNet - Contacto</title>
+    <meta name="description" content="Ponte en contacto con FutbolNet para consultas, sugerencias o colaboraciones.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="global-header">
+        <div class="container header-content">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Logo FutbolNet" class="logo-img">
+                    <span class="site-title">FutbolNet</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="noticias.html">Noticias</a></li>
+                    <li><a href="partidos.html">Partidos</a></li>
+                    <li><a href="equipos.html">Equipos</a></li>
+                    <li><a href="jugadores.html">Jugadores</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html" class="active">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-button" aria-label="Abrir menú" aria-expanded="false">
+                ☰
+            </button>
+        </div>
+    </header>
+
+    <main class="main-contacto">
+        <div class="container">
+            <section class="contact-section">
+                <header class="section-header">
+                    <h1>Ponte en Contacto</h1>
+                    <p>¿Tienes preguntas, sugerencias o quieres colaborar? ¡Nos encantaría escucharte!</p>
+                </header>
+
+                <div class="contact-layout">
+                    <div class="contact-form-container">
+                        <h2>Envíanos un Mensaje</h2>
+                        <form id="contactForm" class="contact-form" action="#" method="POST">
+                            <div class="form-group">
+                                <label for="fullName">Nombre Completo <span class="required-asterisk">*</span></label>
+                                <input type="text" id="fullName" name="fullName" required placeholder="Ej: Lionel Messi">
+                                <div class="validation-message"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico <span class="required-asterisk">*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="Ej: lionel@example.com">
+                                <div class="validation-message"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Asunto</label>
+                                <input type="text" id="subject" name="subject" placeholder="Ej: Consulta sobre publicidad">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Mensaje <span class="required-asterisk">*</span></label>
+                                <textarea id="message" name="message" rows="6" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                                <div class="validation-message"></div>
+                            </div>
+                            
+                            <div class="form-group form-checkbox">
+                                <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                <label for="agreeTerms">Acepto los <a href="terminos.html" target="_blank">términos y condiciones</a> y la <a href="privacidad.html" target="_blank">política de privacidad</a>. <span class="required-asterisk">*</span></label>
+                                <div class="validation-message"></div>
+                            </div>
+
+                            <button type="submit" class="submit-button">Enviar Mensaje</button>
+                            <div id="form-feedback" class="form-feedback" style="display:none;"></div>
+                        </form>
+                    </div>
+
+                    <aside class="contact-info-aside">
+                        <h2>Información Adicional</h2>
+                        <div class="contact-details">
+                            <div class="contact-detail-item">
+                                <strong><i class="icon-map-marker"></i> Dirección:</strong>
+                                <p>Calle Falsa 123, Oficina 7A<br>Ciudad Fútbol, CP 00000<br>País Imaginario</p>
+                            </div>
+                            <div class="contact-detail-item">
+                                <strong><i class="icon-phone"></i> Teléfono:</strong>
+                                <p><a href="tel:+1234567890">+123 456 7890</a></p>
+                            </div>
+                            <div class="contact-detail-item">
+                                <strong><i class="icon-envelope"></i> Email:</strong>
+                                <p><a href="mailto:info@futbolnet.com">info@futbolnet.com</a><br>
+                                   <a href="mailto:soporte@futbolnet.com">soporte@futbolnet.com</a></p>
+                            </div>
+                             <div class="contact-detail-item">
+                                <strong><i class="icon-clock"></i> Horario de Atención:</strong>
+                                <p>Lunes a Viernes: 9:00 AM - 6:00 PM<br>Sábados: 10:00 AM - 2:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="map-container">
+                            <h3>Nuestra Ubicación</h3>
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.146768861033!2d-70.74900588529545!3d-33.57530988077531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d9aa18f6867b%3A0x5024f6e6a1f8600!2sPlaza%20de%20Armas%2C%20Buin%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1685159872153!5m2!1ses!2scl" 
+                                width="100%" 
+                                height="300" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Mapa de ubicación de FutbolNet">
+                            </iframe>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="global-footer">
+        <div class="container footer-content">
+            <div class="footer-section contact-info">
+                <h4>Contacto</h4>
+                <p>Email: info@futbolnet.com</p>
+                <p>Teléfono: +123 456 7890</p>
+                <p>Dirección: Calle Falsa 123, Ciudad Fútbol</p>
+            </div>
+            <div class="footer-section social-media">
+                <h4>Síguenos</h4>
+                <a href="#" aria-label="Facebook">FB</a>
+                <a href="#" aria-label="Twitter">TW</a>
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="YouTube">YT</a>
+            </div>
+            <div class="footer-section corporate-info">
+                <h4>FutbolNet</h4>
+                <p>© 2025 FutbolNet. Todos los derechos reservados.</p>
+                <p><a href="#">Política de Privacidad</a> | <a href="#">Términos de Uso</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Desarrollado con pasión por el fútbol.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/contacto.js"></script> </body>
+</html>
