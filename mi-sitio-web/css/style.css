@@ -29,8 +29,8 @@
     --color-text-muted: #555555;
 
     /* Tipografía */
-    --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Fuente moderna y legible */
-    --font-headings: 'Roboto', 'Arial Black', sans-serif; /* Fuente diferenciada para títulos */
+    --font-primary: 'Roboto', sans-serif; /* Fuente para textos */
+    --font-headings: 'Oswald', sans-serif; /* Fuente para encabezados */
     --font-monospace: 'Courier New', Courier, monospace;
 
     /* Sombras */
@@ -343,6 +343,28 @@ ul {
 .main-inicio {
     padding: 2rem 0;
     flex-grow: 1; /* Asegura que main ocupe el espacio disponible */
+}
+
+/* Hero Slider en la página de inicio */
+.hero-section {
+    margin-bottom: 2rem;
+}
+.hero-slider {
+    position: relative;
+}
+.hero-slider .swiper-slide img {
+    width: 100%;
+    display: block;
+}
+.hero-slider .slide-caption {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-family: var(--font-headings);
 }
 
 .main-layout { /* Usado en Inicio para la estructura de dos columnas */
