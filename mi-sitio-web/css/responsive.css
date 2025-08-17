@@ -1,0 +1,9 @@
+/* Estilos responsivos adicionales para VisióndeFútbol */
+
+@media (max-width: 768px) {
+    /* Ajustes generales para pantallas pequeñas */
+    .main-layout {
+        flex-direction: column;
+    }
+}
+
